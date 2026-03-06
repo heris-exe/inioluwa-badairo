@@ -8,7 +8,7 @@
     "watch:articles": "node ./scripts/watch-articles.mjs",
     "dev": "concurrently \"npm:start\" \"npm:watch:articles\"",
     "build": "ng build",
-    "build:clean": "rm -rf dist && rm -rf public/articles && rm -rf public/work && rm -rf public/principles && rm -rf public/certifications && rm -rf public/about && rm -rf public/contact && rm -rf public/playground && rm -rf public/assets/articles.json && rm -rf public/feed.* && rm -rf public/sitemap.xml && rm -rf src/assets/articles.json",
+    "build:clean": "rimraf dist public/articles public/work public/principles public/playground public/contact public/certifications public/about public/assets/articles.json public/feed.xml public/feed.json public/sitemap.xml public/prerender-manifest.json src/assets/articles.json",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "lint": "ng lint",
@@ -33,7 +33,6 @@
     "@angular/forms": "^20.1.0",
     "@angular/platform-browser": "^20.1.0",
     "@angular/router": "^20.1.0",
-    "particles.js": "^2.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"
@@ -48,7 +47,6 @@
     "@angular/cli": "^20.1.4",
     "@angular/compiler-cli": "^20.1.0",
     "@fontsource-variable/inter": "^5.1.0",
-    "@tailwindcss/line-clamp": "^0.4.4",
     "@tailwindcss/typography": "^0.5.13",
     "@types/jasmine": "~5.1.0",
     "@typescript-eslint/eslint-plugin": "^8.40.0",
@@ -72,6 +70,7 @@
     "remark-gfm": "^4.0.0",
     "remark-html": "^16.0.1",
     "remark-slug": "^7.0.1",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.8.2"
   }

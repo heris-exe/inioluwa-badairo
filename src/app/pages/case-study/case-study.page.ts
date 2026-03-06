@@ -2,6 +2,7 @@ import { Component, Inject } from '@angular/core';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { DOCUMENT } from '@angular/common';
 import { TitleCasePipe } from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { AppearDirective } from '../../shared/appear.directive';
 import { BreadcrumbsComponent } from '../../shared/breadcrumbs.component';
 import { WORK_ITEMS } from '../work/work.data';
@@ -9,7 +10,7 @@ import { WORK_ITEMS } from '../work/work.data';
 @Component({
   selector: 'app-case-study-page',
   standalone: true,
-  imports: [RouterLink, TitleCasePipe, AppearDirective, BreadcrumbsComponent],
+  imports: [RouterLink, TitleCasePipe, NgOptimizedImage, AppearDirective, BreadcrumbsComponent],
   templateUrl: './case-study.page.html',
   styleUrl: './case-study.page.css'
 })
@@ -26,7 +27,7 @@ export class CaseStudyPage {
   private applyMeta(): void {
     const it = this.item;
     if (!it) return;
-    const title = `${it.title} · Case Study · SoulCodedHeris`;
+    const title = `${it.title} · Case Study · Heris.exe`;
     const description = it.blurb || 'A practical case study: problem, role, constraints, process, result, reflection.';
     const origin = this.document.location.origin;
     const href = `${origin}/work/${it.slug}`;
@@ -35,7 +36,7 @@ export class CaseStudyPage {
     this.setNamedMeta('twitter:card', 'summary_large_image');
     this.setNamedMeta('twitter:title', title);
     this.setNamedMeta('twitter:description', description);
-    const image = it.thumbnailUrl ? (it.thumbnailUrl.startsWith('http') ? it.thumbnailUrl : `${origin}${it.thumbnailUrl}`) : `${origin}/soulcodedheris-logo.jpeg`;
+    const image = it.thumbnailUrl ? (it.thumbnailUrl.startsWith('http') ? it.thumbnailUrl : `${origin}${it.thumbnailUrl}`) : `${origin}/heris.exe-logo.jpeg`;
     this.setNamedMeta('twitter:image', image);
     this.setPropertyMeta('og:title', title);
     this.setPropertyMeta('og:description', description);

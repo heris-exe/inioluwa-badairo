@@ -2,7 +2,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { load as loadHtml } from 'cheerio';
 
-const origin = process.env.SITE_ORIGIN || 'https://soulcodedheris.com';
+const origin = process.env.SITE_ORIGIN || 'https://heris.exe.com';
 const projectRoot = process.cwd();
 const manifestPath = join(projectRoot, 'public', 'prerender-manifest.json');
 
@@ -55,12 +55,12 @@ async function renderTopLevel(route, { title, description, extraJsonLd } = {}) {
   upsertPropertyMeta($, 'og:description', description);
   upsertPropertyMeta($, 'og:type', 'website');
   upsertPropertyMeta($, 'og:url', href);
-  upsertPropertyMeta($, 'og:site_name', 'SoulCodedHeris');
-  upsertPropertyMeta($, 'og:image', `${origin}/soulcodedheris-logo.jpeg`);
+  upsertPropertyMeta($, 'og:site_name', 'Heris.exe');
+  upsertPropertyMeta($, 'og:image', `${origin}/heris.exe-logo.jpeg`);
   upsertNamedMeta($, 'twitter:card', 'summary_large_image');
   upsertNamedMeta($, 'twitter:title', title);
   upsertNamedMeta($, 'twitter:description', description);
-  upsertNamedMeta($, 'twitter:image', `${origin}/soulcodedheris-logo.jpeg`);
+  upsertNamedMeta($, 'twitter:image', `${origin}/heris.exe-logo.jpeg`);
 
   if (extraJsonLd) {
     const script = $('<script>')
@@ -91,7 +91,7 @@ async function renderArticles() {
     const title = `${art.title} · Articles`;
     const description = art.summary || '';
     // find first image in article HTML
-    let ogImage = `${origin}/soulcodedheris-logo.jpeg`;
+    let ogImage = `${origin}/heris.exe-logo.jpeg`;
     try {
       const $content = loadHtml(art.html || '');
       const src = $content('img').first().attr('src') || '';
@@ -108,7 +108,7 @@ async function renderArticles() {
     upsertPropertyMeta($, 'og:description', description);
     upsertPropertyMeta($, 'og:type', 'article');
     upsertPropertyMeta($, 'og:url', href);
-    upsertPropertyMeta($, 'og:site_name', 'SoulCodedHeris');
+    upsertPropertyMeta($, 'og:site_name', 'Heris.exe');
     upsertPropertyMeta($, 'og:image', ogImage);
     upsertNamedMeta($, 'twitter:card', 'summary_large_image');
     upsertNamedMeta($, 'twitter:title', title);
@@ -140,14 +140,14 @@ async function renderArticles() {
 async function run() {
   // Top-level routes
   const top = [
-    { route: '/', title: 'SoulCodedHeris · Software Engineer', description: 'Building purposeful, human‑centered software.' },
-    { route: '/work', title: 'Work · SoulCodedHeris', description: 'Selected projects and case studies.' },
-    { route: '/articles', title: 'Articles · SoulCodedHeris', description: 'Weekly reflections on purpose, engineering, and design.' },
-    { route: '/principles', title: 'Principles · SoulCodedHeris', description: 'Guiding principles and craft philosophy.' },
-    { route: '/certifications', title: 'Certifications · SoulCodedHeris', description: 'Verified achievements and credentials.' },
-    { route: '/about', title: 'About · SoulCodedHeris', description: 'About Heris (Inioluwa), software engineer.' },
-    { route: '/contact', title: 'Contact · SoulCodedHeris', description: 'Get in touch for projects and collaboration.' },
-    { route: '/playground', title: 'Playground · SoulCodedHeris', description: 'Small experiments and demos.' }
+    { route: '/', title: 'Heris.exe · Software Engineer', description: 'Building purposeful, human‑centered software.' },
+    { route: '/work', title: 'Work · Heris.exe', description: 'Selected projects and case studies.' },
+    { route: '/articles', title: 'Articles · Heris.exe', description: 'Weekly reflections on purpose, engineering, and design.' },
+    { route: '/principles', title: 'Principles · Heris.exe', description: 'Guiding principles and craft philosophy.' },
+    { route: '/certifications', title: 'Certifications · Heris.exe', description: 'Verified achievements and credentials.' },
+    { route: '/about', title: 'About · Heris.exe', description: 'About Heris (Inioluwa), software engineer.' },
+    { route: '/contact', title: 'Contact · Heris.exe', description: 'Get in touch for projects and collaboration.' },
+    { route: '/playground', title: 'Playground · Heris.exe', description: 'Small experiments and demos.' }
   ];
   const urls = [];
 
@@ -158,7 +158,7 @@ async function run() {
       name: 'Inioluwa Badairo',
       alternateName: 'Heris',
       url: `${origin}/about`,
-      image: `${origin}/Heris-Headshot.jpg`,
+      image: `${origin}/my-headshot.jpg`,
       jobTitle: 'Software Engineer'
     } : undefined;
     // Do not overwrite SPA root index.html; skip '/'
@@ -193,7 +193,7 @@ async function run() {
       const template = await readFile(join(projectRoot, 'src', 'index.html'), 'utf8');
       const $ = loadHtml(template);
       const href = `${origin}/work/${it.slug}`;
-      const title = `${it.title || it.slug} · Case Study · SoulCodedHeris`;
+      const title = `${it.title || it.slug} · Case Study · Heris.exe`;
       const description = it.blurb || 'A practical case study: problem, role, constraints, process, result, reflection.';
       $('title').text(title);
       upsertNamedMeta($, 'description', description);
@@ -203,8 +203,8 @@ async function run() {
       upsertPropertyMeta($, 'og:description', description);
       upsertPropertyMeta($, 'og:type', 'article');
       upsertPropertyMeta($, 'og:url', href);
-      upsertPropertyMeta($, 'og:site_name', 'SoulCodedHeris');
-      const ogImg = it.thumbnailUrl ? (/^https?:\/\//i.test(it.thumbnailUrl) ? it.thumbnailUrl : `${origin}${it.thumbnailUrl}`) : `${origin}/soulcodedheris-logo.jpeg`;
+      upsertPropertyMeta($, 'og:site_name', 'Heris.exe');
+      const ogImg = it.thumbnailUrl ? (/^https?:\/\//i.test(it.thumbnailUrl) ? it.thumbnailUrl : `${origin}${it.thumbnailUrl}`) : `${origin}/heris.exe-logo.jpeg`;
       upsertPropertyMeta($, 'og:image', ogImg);
       upsertNamedMeta($, 'twitter:card', 'summary_large_image');
       upsertNamedMeta($, 'twitter:title', title);

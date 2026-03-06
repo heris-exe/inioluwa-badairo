@@ -1,14 +1,12 @@
 import { Component, signal } from '@angular/core';
 import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
-import { NgClass } from '@angular/common';
+import { NgClass, NgOptimizedImage } from '@angular/common';
 import { PrefetchRouteDirective } from './shared/prefetch.directive';
 import { ThemeService } from './shared/theme.service';
 import { MetaService } from './shared/meta.service';
-import { ParticlesBackgroundComponent } from './shared/particles-background.component';
-
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, ParticlesBackgroundComponent, NgClass, PrefetchRouteDirective],
+  imports: [RouterOutlet, RouterLink, RouterLinkActive, NgClass, PrefetchRouteDirective, NgOptimizedImage],
   templateUrl: './app.html',
   // styleUrl removed; using global Tailwind styles
 })

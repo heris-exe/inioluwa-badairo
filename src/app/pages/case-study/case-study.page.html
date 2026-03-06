@@ -7,6 +7,23 @@
     <p class="mt-4 text-gray-600 dark:text-gray-300">{{ item?.blurb || 'Problem, role, constraints, process, result, reflection.' }}</p>
   </header>
 
+  @if (item?.thumbnailUrl) {
+    <figure class="mt-8">
+      <img ngSrc="{{ item.thumbnailUrl }}" alt="{{ item.title }} screenshot" class="w-full h-auto min-h-[420px] rounded-lg border border-gray-200 dark:border-gray-700 object-contain" width="1200" height="900" priority />
+    </figure>
+  }
+
+  @if (item?.appUrl || item?.githubUrl) {
+    <section class="mt-6 flex flex-wrap gap-3">
+      @if (item?.appUrl) {
+        <a [href]="item.appUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700">Live app →</a>
+      }
+      @if (item?.githubUrl) {
+        <a [href]="item.githubUrl" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 rounded-lg border border-gray-300 bg-gray-50 px-4 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 dark:border-gray-600 dark:bg-gray-800 dark:text-gray-200 dark:hover:bg-gray-700">Source (GitHub) →</a>
+      }
+    </section>
+  }
+
   <section class="mt-6 grid grid-cols-2 gap-4 rounded-lg border border-gray-200 p-4 text-sm dark:border-gray-700">
     @if (item?.role) {
       <div>

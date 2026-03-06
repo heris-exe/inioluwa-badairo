@@ -84,7 +84,7 @@ run();
 
 
 async function generateSitemap(articles) {
-  const origin = process.env.SITE_ORIGIN || 'https://soulcodedheris.com';
+  const origin = process.env.SITE_ORIGIN || 'https://heris.exe.com';
   const staticSources = [
     { path: '/', file: join(process.cwd(), 'src', 'app', 'pages', 'home', 'home.page.html') },
     { path: '/work', file: join(process.cwd(), 'src', 'app', 'pages', 'work', 'work.page.html') },
@@ -109,7 +109,7 @@ async function generateSitemap(articles) {
 }
 
 function generateRss(articles) {
-  const origin = process.env.SITE_ORIGIN || 'https://soulcodedheris.com';
+  const origin = process.env.SITE_ORIGIN || 'https://heris.exe.com';
   const items = articles.map(a => `
     <item>
       <title><![CDATA[${a.title}]]></title>
@@ -121,19 +121,19 @@ function generateRss(articles) {
   return `<?xml version=\"1.0\" encoding=\"UTF-8\"?>
   <rss version=\"2.0\">
     <channel>
-      <title>SoulCodedHeris · Articles</title>
+      <title>Heris.exe · Articles</title>
       <link>${origin}/articles</link>
-      <description>Articles by SoulCodedHeris</description>
+      <description>Articles by Heris.exe</description>
       ${items}
     </channel>
   </rss>`;
 }
 
 function generateJsonFeed(articles) {
-  const origin = process.env.SITE_ORIGIN || 'https://soulcodedheris.com';
+  const origin = process.env.SITE_ORIGIN || 'https://heris.exe.com';
   return JSON.stringify({
     version: 'https://jsonfeed.org/version/1.1',
-    title: 'SoulCodedHeris · Articles',
+    title: 'Heris.exe · Articles',
     home_page_url: `${origin}/articles`,
     feed_url: `${origin}/feed.json`,
     items: articles.map(a => ({

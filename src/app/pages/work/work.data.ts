@@ -6,42 +6,19 @@ export type WorkItem = {
   role?: string;
   resultPct?: number;
   thumbnailUrl?: string;
+  appUrl?: string;
+  githubUrl?: string;
 };
 
 export const WORK_ITEMS: WorkItem[] = [
   {
-    slug: 'example-case',
-    title: 'Full-Stack E-commerce Platform',
-    blurb: 'Built scalable e-commerce solution with microservices architecture. Increased performance by 40% and reduced deployment time by 60%.',
-    tags: ['Angular', 'Node.js', 'Microservices', 'Performance'],
-    role: 'Lead Engineer',
-    resultPct: 40,
-    thumbnailUrl: '/soulcodedheris-logo.jpeg'
-  },
-  {
-    slug: 'market-dashboard',
-    title: 'Real-time Analytics Dashboard',
-    blurb: 'Developed real-time data processing pipeline with WebSocket connections and Redis caching. Time-to-insight down 35%.',
-    tags: ['Angular', 'Node.js', 'WebSockets', 'Redis'],
-    role: 'Full‑stack Engineer',
-    resultPct: 35
-  },
-  {
-    slug: 'onboarding-flow',
-    title: 'API-First User Onboarding',
-    blurb: 'Designed RESTful APIs and progressive web app for seamless user onboarding. Increased completion by 18% and reduced support tickets.',
-    tags: ['API Design', 'React', 'Node.js', 'Analytics'],
-    role: 'API Engineer',
-    resultPct: 18
-  },
-  {
-    slug: 'design-system',
-    title: 'Enterprise Design System',
-    blurb: 'Architected component library with comprehensive documentation and automated testing. Scaled across 5 development teams.',
-    tags: ['Design System', 'TypeScript', 'Testing', 'Documentation'],
-    role: 'Architect',
-    resultPct: 100
+    slug: 'spend-ng',
+    title: 'Spend NG',
+    blurb: 'Track daily expenses in ₦ — no Excel needed. Dashboard with totals, smart insights, and spending charts. Data syncs across devices via Supabase.',
+    tags: ['React', 'Vite', 'Tailwind CSS', 'Supabase', 'Recharts', 'shadcn/ui'],
+    role: 'Solo developer',
+    thumbnailUrl: '/spend-ng-dashboard.png',
+    appUrl: 'https://spendng.vercel.app/',
+    githubUrl: 'https://github.com/heris-exe/Spend-NG'
   }
 ];
-
-

@@ -16,14 +16,14 @@ export class AboutPage {
   }
 
   private injectPersonJsonLd(): void {
-    const origin = this.document.location.origin || 'https://soulcodedheris.com';
+    const origin = this.document.location.origin || 'https://heris.exe.com';
     const data = {
       '@context': 'https://schema.org',
       '@type': 'Person',
       name: 'Inioluwa Badairo',
       alternateName: 'Heris',
       url: `${origin}/about`,
-      image: `${origin}/Heris-Headshot.jpg`,
+      image: `${origin}/my-headshot.jpg`,
       jobTitle: 'Software Engineer',
       sameAs: [
         `${origin}`

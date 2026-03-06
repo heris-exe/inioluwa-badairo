@@ -4,12 +4,12 @@
         [ngClass]="{ 'bg-white/70 dark:bg-black/60 backdrop-blur-md ring-1 ring-black/5 dark:ring-white/10 shadow-sm': scrolled() }">
   <!-- Logo Section -->
   <div class="flex items-center">
-    <a routerLink="/" class="inline-flex items-center gap-3 no-underline group" aria-label="SoulCodedHeris home">
+    <a routerLink="/" class="inline-flex items-center gap-3 no-underline group" aria-label="Heris.exe home">
       <div class="relative">
-        <img src="/soulcodedheris-logo.jpeg" alt="SoulCodedHeris logo" class="h-8 w-auto transition-transform group-hover:scale-105" width="128" height="128" />
+        <img ngSrc="/heris.exe-logo.jpeg" alt="Heris.exe logo" class="h-8 w-auto transition-transform group-hover:scale-105" width="128" height="128" priority />
         <div class="absolute inset-0 rounded-full bg-blue-500/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
       </div>
-      <span class="hidden sm:inline-block text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">SoulCodedHeris</span>
+      <span class="hidden sm:inline-block text-lg font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Heris.exe</span>
     </a>
   </div>
   
@@ -77,7 +77,7 @@
       <!-- Mobile Menu Header -->
       <div class="flex items-center justify-between p-6 border-b border-gray-200 dark:border-gray-700">
         <div class="flex items-center gap-3">
-          <img src="/soulcodedheris-logo.jpeg" alt="SoulCodedHeris logo" class="h-8 w-auto" width="128" height="128" />
+          <img src="/heris.exe-logo.jpeg" alt="Heris.exe logo" class="h-8 w-auto" width="128" height="128" />
           <h2 id="mobile-menu-title" class="text-lg font-semibold text-gray-900 dark:text-white">Menu</h2>
         </div>
         <button class="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" (click)="closeMobileNav()" aria-label="Close menu">
@@ -225,7 +225,6 @@
   </div>
 }
 
-<app-particles-background />
 <main id="main" class="min-h-dvh bg-white text-gray-900 dark:bg-black dark:text-gray-100" role="main">
   <router-outlet />
   <button id="backToTop" class="back-to-top" aria-label="Back to top" (click)="scrollToTop()">
@@ -254,7 +253,7 @@
   <div class="mx-auto mt-6 w-full max-w-6xl grid gap-4 md:grid-cols-2">
     <div class="text-xs text-gray-500 dark:text-gray-400">
       <div class="font-medium mb-1">Colophon</div>
-      Built with Angular, Tailwind, and TypeScript. Hosted statically. Inter font. Particles respect reduced motion.
+      Built with Angular, Tailwind, and TypeScript. Hosted statically. Inter font.
     </div>
     <nav class="text-xs text-gray-500 dark:text-gray-400">
       <div class="font-medium mb-1">Sitemap</div>

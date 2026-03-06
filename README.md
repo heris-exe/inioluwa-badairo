@@ -44,10 +44,10 @@ The prebuild step generates prerendered HTML for top routes, articles, and case 
 
 ```yaml
 env:
-  SITE_ORIGIN: https://staging.soulcodedheris.com
+  SITE_ORIGIN: https://staging.heris.exe.com
 ```
 
-- Locally, it defaults to `https://soulcodedheris.com`.
+- Locally, it defaults to `https://heris.exe.com`.
 
 ### Husky & linting
 

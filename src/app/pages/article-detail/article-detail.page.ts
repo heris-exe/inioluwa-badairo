@@ -199,7 +199,7 @@ export class ArticleDetailPage {
     this.setPropertyMeta('og:description', description);
     this.setPropertyMeta('og:type', 'article');
     this.setPropertyMeta('og:url', `${this.document.location.href}`);
-    this.setPropertyMeta('og:site_name', 'SoulCodedHeris');
+    this.setPropertyMeta('og:site_name', 'Heris.exe');
     // Select first image for OG/Twitter if present
     const imgUrl = this.findFirstImageUrl();
 

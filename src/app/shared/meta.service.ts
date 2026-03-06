@@ -23,14 +23,14 @@ export class MetaService {
   private applyForRoute(): void {
     const url = this.document.location.pathname;
     const map: Record<string, { title: string; description: string } > = {
-      '/': { title: 'SoulCodedHeris · Software Engineer', description: 'Building purposeful, human‑centered software.' },
-      '/articles': { title: 'Articles · SoulCodedHeris', description: 'Weekly reflections on purpose, engineering, and design.' },
-      '/work': { title: 'Work · SoulCodedHeris', description: 'Selected projects and case studies.' },
-      '/principles': { title: 'Principles · SoulCodedHeris', description: 'Guiding principles and craft philosophy.' },
-      '/certifications': { title: 'Certifications · SoulCodedHeris', description: 'Verified achievements and credentials.' },
-      '/about': { title: 'About · SoulCodedHeris', description: 'About Heris (Inioluwa), software engineer.' },
-      '/contact': { title: 'Contact · SoulCodedHeris', description: 'Get in touch for projects and collaboration.' },
-      '/playground': { title: 'Playground · SoulCodedHeris', description: 'Small experiments and demos.' }
+      '/': { title: 'Heris.exe · Software Engineer', description: 'Building purposeful, human‑centered software.' },
+      '/articles': { title: 'Articles · Heris.exe', description: 'Weekly reflections on purpose, engineering, and design.' },
+      '/work': { title: 'Work · Heris.exe', description: 'Selected projects and case studies.' },
+      '/principles': { title: 'Principles · Heris.exe', description: 'Guiding principles and craft philosophy.' },
+      '/certifications': { title: 'Certifications · Heris.exe', description: 'Verified achievements and credentials.' },
+      '/about': { title: 'About · Heris.exe', description: 'About Heris (Inioluwa), software engineer.' },
+      '/contact': { title: 'Contact · Heris.exe', description: 'Get in touch for projects and collaboration.' },
+      '/playground': { title: 'Playground · Heris.exe', description: 'Small experiments and demos.' }
     };
 
     const key = Object.keys(map).find(k => url === k) || '/';
@@ -41,7 +41,7 @@ export class MetaService {
       // Canonical
       this.setCanonical(href);
       // Core defaults
-      this.applyDefaults(meta.title, meta.description, href, `${origin}/soulcodedheris-logo.jpeg`);
+      this.applyDefaults(meta.title, meta.description, href, `${origin}/heris.exe-logo.jpeg`);
     }
   }
 
@@ -72,7 +72,7 @@ export class MetaService {
     this.setPropertyMeta('og:description', description);
     this.setPropertyMeta('og:type', 'website');
     this.setPropertyMeta('og:url', url);
-    this.setPropertyMeta('og:site_name', 'SoulCodedHeris');
+    this.setPropertyMeta('og:site_name', 'Heris.exe');
     this.setPropertyMeta('og:image', imageAbsUrl);
     // Twitter
     this.setNamedMeta('twitter:card', 'summary_large_image');
